@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"./conditions"
+	"github.com/jared-prime/weather/conditions"
 	"github.com/urfave/cli"
 )
 
