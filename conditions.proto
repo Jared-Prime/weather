@@ -1,0 +1,27 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+
+package conditions;
+
+
+service Conditions {
+  rpc Report (stream Condition) returns (ReportSummary) {}
+}
+
+message Condition {
+  google.protobuf.Timestamp time = 1;
+  string location = 2;
+  float temperature = 3;
+  float humidity = 4;
+}
+
+message ReportSummary {
+  google.protobuf.Timestamp time_from = 1;
+  google.protobuf.Timestamp time_until = 2;
+  float max_temperature = 3;
+  float min_temperature = 4;
+  float avg_temperature = 5;
+  float max_humidity = 6;
+  float min_humidity = 7;
+  float avg_humidity = 8;
+}
